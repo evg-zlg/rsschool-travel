@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="./icons/logo.svg type=" type="image/svg+xml">
+  <title>Travel</title>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <figure class="logo__image">
+        <img src="./icons/logo.svg" alt="icon">
+      </figure>
+      <label class="logo__text">
+          Travel Portal
+      </label>
+    </div>
+    <nav class="menu">
+      <ul class="menu-desktop">
+        <li class="menu__item">
+          <a class="menu__link" href="#how-it-works">
+            How It Works
+          </a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link" href="#plan-your-trip">
+            Plan Your Trip
+          </a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link" href="#popular-destinations">
+            Destinations
+          </a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link" href="#travel-stories">
+            Travel Stories
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <form class="authentication">
+      <button class="header__button">
+        Login
+      </button>
+    </form>  
+  </header>
+
+  <section class="first-section">
+    <span id="plan-your-trip"></span>
+    <div class="first-section__content">
+      <h1 class="first-section__title">
+        Explore the beauty of the World
+      </h1>
+      <p class="first-section__text">
+        Receive personalized recommendations for countries, hotels, activities and more
+      </p>
+      <form class="form-search">
+        <input class="form-search__input" type="text" placeholder="What would you like to do?">
+        <button class="form-search__button">
+          Start Planning
+        </button>
+      </form>
+    </div>  
+  </section>
+  
+  <section class="content-block">
+    <span id="how-it-works"></span>
+    <h2 class="content-block__title" >
+      3 STEPS TO THE PERFECT TRIP
+    </h2>
+    <div class="content-block__steps">
+
+      <div class="trip-steps">
+        <figure class="trip-steps__image">
+          <img class="trip-steps__icon" src="./icons/bicycle.png" alt="bicycle">
+        </figure>
+        <p class="trip-steps__text">
+          Tell us what you want to do
+        </p>
+      </div>
+
+      <div class="trip-steps">
+        <figure class="trip-steps__image">
+          <img class="trip-steps__icon" src="./icons/calendar.png" alt="calendar">
+        </figure>
+        <p class="trip-steps__text">
+          Share us preferable dates 
+        </p>
+      </div>
+
+      <div class="trip-steps">
+        <figure class="trip-steps__image">
+          <img class="trip-steps__icon" src="./icons/airplane.png" alt="airplane">
+        </figure>
+        <p class="trip-steps__text">
+          We will give you recommendations
+        </p>
+      </div>
+
+    </div>
+  </section>
+  
+  <section class="content-block">
+    <span id="popular-destinations"></span>
+    <h2 class="content-block__title">
+      POPULAR DESTINATIONS
+    </h2>
+    <div class="content-block__destinations">
+      <figure class="destinations">
+        <img class="destinations__left" src="./images/spain-desktop.jpg" alt="spain">
+        <img class="destinations__mid" src="./images/japan-desktop.jpg" alt="japan">
+        <img class="destinations__right" src="./images/usa-desktop.jpg" alt="usa">
+      </figure>
+      <div class="destinations__buttons">
+        <label class="destinations__switch-label">
+          <input class="destinations__switch-button" type="radio" name="destinations">
+        </label>
+        <label class="destinations__switch-label">
+          <input class="destinations__switch-button" type="radio" name="destinations">
+        </label>
+        <label class="destinations__switch-label">
+          <input class="destinations__switch-button" type="radio" name="destinations">
+        </label>
+      </div>
+      <form class="destinations__action" >
+        <label class="destination__find-more-arrow">
+          <button class="destinations__find-more">
+            Find More
+          </button>
+        </label>
+      </form>
+    </div>
+  </section>
+
+  <section class="content-block">
+    <span id="travel-stories"></span>
+    <h2 class="content-block__title" >
+      TRAVEL STORIES
+    </h2>
+    <div class="content-block__stories">
+      <div class="content-block__stories_for-opacity">
+      </div>
+      <div class="stories">
+        <div class="stories__items">
+          <figure class="stories__image">
+            <img class="stories__img" src="./images/stories-thailand.jpg" alt="thailand">
+          </figure>
+          <div class="stories__description">
+            <h3 class="stories__title">
+              10 Photos of Attractive Thailand
+            </h3>
+            <p class="stories__text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
+              pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
+              culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum 
+              dolor sit amet, consectetur adipiscing elit... 
+              <span class="read-more-link">Read More</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="stories__items">
+          <figure class="stories__image">
+            <img class="stories__img" src="./images/stories-utah.jpg" alt="utah">
+          </figure>
+          <div class="stories__description">
+            <h3 class="stories__title">
+              Canyonlands National Park, Utah
+            </h3>
+            <p class="stories__text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
+              pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
+              culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum 
+              dolor sit amet, consectetur adipiscing elit... 
+              <span class="read-more-link">Read More</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="stories__items">
+          <figure class="stories__image">
+            <img class="stories__img" src="./images/stories-mountains.jpg" alt="mountains">
+          </figure>
+          <div class="stories__description">
+            <h3 class="stories__title">
+              I left my heart in the Mountains!
+            </h3>
+            <p class="stories__text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
+              pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
+              culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum 
+              dolor sit amet, consectetur adipiscing elit... 
+              <span class="read-more-link">Read More</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="stories__items">
+          <figure class="stories__image">
+            <img class="stories__img" src="./images/stories-longest.jpg" alt="longest journey">
+          </figure>
+          <div class="stories__description">
+            <h3 class="stories__title">
+              The Longest journey in my life!
+            </h3>
+            <p class="stories__text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
+              pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
+              culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum 
+              dolor sit amet, consectetur adipiscing elit... 
+              <span class="read-more-link">Read More</span>
+            </p>
+          </div>
+        </div>
+
+
+      </div>
+      <form class="stories__manage">
+        <label class="stories__button-arrow">
+          <button class="stories__button">
+            See More
+          </button>
+        </label>
+      </form>
+      <footer class="footer">
+        <p class="footer__copyright">
+          All Rights Reserved © Travel Portal
+        </p>
+        <ul class="footer__icons">
+          <li class="footer__one-icon"> 
+            <a class="footer__link" href="#">
+              <img class="footer__icon-image" src="./icons/inst.svg" alt="instagram">
+            </a>
+          </li>
+          <li class="footer__one-icon"> 
+            <a class="footer__link" href="#">
+              <img class="footer__icon-image" src="./icons/youtube.svg" alt="youtube">
+            </a>
+          </li>  
+          <li class="footer__one-icon"> 
+            <a class="footer__link" href="#"></a>
+              <img class="footer__icon-image" src="./icons/twitter.svg" alt="twitter">
+            </a>
+          </li>
+        </ul>
+      </footer>
+    </div>
+    
+  </section>
+
+
+
+
+</body>
+</html>
