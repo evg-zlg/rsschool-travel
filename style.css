@@ -73,7 +73,7 @@ body {
   color: #FFFFFF;
 }
 .menu-desktop {
-  width: 424px;
+  width: 527px;
   display: flex;
   justify-content: space-between;
 }
@@ -267,32 +267,40 @@ body {
   position: relative;
   overflow:hidden;
   margin-bottom: 24px;
+  max-height: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
 }
 .destinations__left {
   width: 800px;
   height: 800px;
-  border-radius: 16px;
-  position: absolute;
-  top: 0;
-  left: -600px;
+  
   cursor: pointer;
+  border: solid red;
+  ;
 }
 .destinations__mid {
   width: 800px;
   height: 800px;
-  border-radius: 16px;
+  cursor: pointer;
+  border: solid green;
   margin-left: 60px;
   margin-right: 60px;
-  cursor: pointer;
 }
 .destinations__right {
   width: 800px;
   height: 800px;
-  border-radius: 16px;
-  position: absolute;
-  top: 0;
-  right: -600px;
+  
   cursor: pointer;
+  border: solid blue;
+}
+.destinations__image {
+  display: block;
+  border-radius: 16px;
+  object-fit: contain;
+
 }
 .destinations__buttons {
   position: relative;
@@ -460,6 +468,7 @@ body {
   color: #FFFFFF;
   border-style: none;
   padding-left: 81px;
+  margin-bottom: 41px;
 }
 
 .footer {
