@@ -43,7 +43,18 @@ body, figure, ul, li {
 }
 body {
   max-width: 1440px;
-  position: relative;
+  
+}
+@media (max-width: 768px) {
+  body {
+    max-width: 768px;
+  }
+}
+@media (max-width: 390px) {
+  body {
+    max-width: 390px;
+    min-width: 320px;
+  }
 }
 
 .header {
@@ -51,19 +62,37 @@ body {
   background: rgba(242, 120, 92, 0.7);
   box-shadow: 0px 4px 4px rgba(13, 96, 111, 0.5);
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   position: fixed;
   top:0;
-  width: 100%;
-  max-width: inherit;
+  width: 100%; 
+  max-width: 1440px;
   z-index: 1;
+  padding-left: 3.6vw;
+  padding-right: 3.6vw;
+  box-sizing: border-box;
+}
 
+
+@media (max-width: 768px) {
+  .header {
+    max-width: 768px;
+    background: rgba(242, 120, 92, 0);
+    box-shadow: none;
+    padding-right: 9vw;
+    padding-top: 45px;
+  }
 }
 .logo {
   display: flex;
   justify-content: space-between;
-  width: 216px;
+  align-items: center;
+}
+.logo__image {
+  position: relative;
+  z-index: 1;
+  margin-right: 6px;
 }
 .logo__text {
   font-family: Magra;
@@ -72,21 +101,74 @@ body {
   line-height: 39px;
   color: #FFFFFF;
 }
+@media (max-width: 1024px) {
+  .logo__text {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .logo__text {
+    display: none;
+  }
+}
+.menu {
+  
+}
+@media (max-width: 768px) {
+  .menu {
+    
+  } 
+}
+.menu-burger {
+  position: relative;
+  display: none;
+}
+@media (max-width: 768px) {
+  .menu-burger {
+    display: block;
+  } 
+}
+.menu-burger::before {
+  content: "";
+  background-image: url("./icons/menu-burger.svg");
+  color: black;
+  
+  border: red;
+  width: 35px;
+  height: 32px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.menu-burger__button {
+  opacity: 0;
+}
+
+
 .menu-desktop {
-  width: 527px;
   display: flex;
   justify-content: space-between;
 }
+
 .menu__item {
   font-family: "Red hat text";
   font-size: 16px;
   line-height: 21px;
   color: #FFFFFF;
   list-style-type: none;
+  margin-right: 1rem;
 }
+
 .menu__link {
   color: #FFFFFF;
   text-decoration: none;
+}
+@media (max-width: 768px) {
+  .menu__item {
+    display: none;
+  }
 }
 .header__button {
   width: 103px;
@@ -102,18 +184,27 @@ body {
   line-height: 21px;
   cursor: pointer;
 }
+@media (max-width: 768px) {
+  .authentication {
+    display: none;
+  }
+}
 .header__button:hover {
   background: #40a4b6;
 }
 .first-section {
-  background-image: url("./images/garrett-parker-DlkF4.jpg");
-  background-repeat: no repeat;
-  background-size: cover;
-  background-position: 0 0;
+  background: url("./images/garrett-parker-DlkF4.jpg") 0 0 no-repeat;
   height: 643px;
   margin-top: 0px;
   margin-bottom: 80px;
   padding-top: 122px;
+  
+}
+@media (max-width: 768px) {
+  .first-section {
+    background: linear-gradient(180deg, #0D606F 0%, rgba(13, 96, 111, 0) 25.1%), url("./images/garrett-parker-DlkF4.jpg") 0 0 no-repeat ;
+    height: 31.3vw;
+  }
 }
 #plan-your-trip {
   display: block;
@@ -123,10 +214,26 @@ body {
   pointer-events: none;
 } 
 .first-section__content {
-  margin-left: 120px;
-  margin-bottom: 241px;
-  width: 892px;
-
+  padding-left: 6.7vw;
+  padding-right: 6.7vw;
+  height: 100%;
+  max-width: 892px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media (max-width: 768px) {
+  .first-section__content {
+    padding-left: 3vw;
+    padding-right: 3vw;
+    justify-content: flex-end;
+  }
+}
+@media (max-width: 390px) {
+  .first-section__content {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 .first-section__title {
   font-family: Aleo;
@@ -137,6 +244,22 @@ body {
 
   max-width: 892px;
 }
+@media (max-width: 1024px) {
+  .first-section__title {
+    font-size: 60px;
+    line-height: 68px;
+  }
+}
+@media (max-width: 768px) {
+  .first-section__title {
+    display: none;
+  }
+}
+@media (max-width: 390px) {
+  .first-section__title {
+    display: none;
+  }
+}
 .first-section__text {
   font-family: 'Aleo';
   font-style: italic;
@@ -146,18 +269,25 @@ body {
   color: #FFFFFF;
   margin-bottom: 40px;
 }
+@media (max-width: 768px) {
+  .first-section__text {
+    display: none;
+  }
+}
 .form-search {
   position: relative;
   width: 100%;
-  margin-bottom: 254px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10vw;
 }
 .form-search__input {
-  width: 849px;
+  width: calc(100% - 41px);
   height: 95px; 
   background: rgba(255, 255, 255, 0.7);
   border-radius: 16px;
   border-style: none;
-
+  
   font-family: 'Aleo';
   font-style: italic;
   font-weight: 600;
@@ -167,6 +297,22 @@ body {
   padding-left: 41px;  
   
 }
+@media (max-width: 768px) {
+  .form-search__input {
+    height: 12vw;
+    padding-left: 25px; 
+  }
+}
+
+@media (max-width: 390px) {
+  .form-search__input {
+    width: 360px;
+    height: 48px;
+    padding-left: 16px; 
+  }
+}
+
+
 .form-search__input::placeholder {
   font-family: 'Aleo';
   font-style: italic;
@@ -174,7 +320,24 @@ body {
   font-size: 24px;
   line-height: 29px;
   color: #F2785C;
-  
+}
+@media (max-width: 768px) {
+  .form-search__input::placeholder {
+    font-size: 20px;
+    line-height: 22px;
+  }
+}
+@media (max-width: 545px) {
+  .form-search__input::placeholder {
+    font-size: 17px;
+    line-height: 20px;
+  }
+}
+@media (max-width: 390px) {
+  .form-search__input::placeholder {
+    font-size: 16px;
+    line-height: 17px;
+  }
 }
 .form-search__button {
   width: 228px;
@@ -193,8 +356,33 @@ body {
 
   position: absolute;
   right: 18px;
-  bottom: 20px;
+  top: 19%;
   cursor: pointer;
+}
+@media (max-width: 768px) {
+  .form-search__button  {
+    font-size: 18px;
+    line-height: 20px;
+    width: 28vw;
+    height: 6.2vw;
+    top: 23%;
+    right: 26px;
+  }
+}
+@media (max-width: 545px) {
+  .form-search__button  {
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
+@media (max-width: 390px) {
+  .form-search__button  {
+    font-size: 11px;
+    line-height: 15px;
+    width: 92px;
+    height: 30px;
+    right: 12px;
+  }
 }
 .form-search__button:hover {
   background: #40a4b6;
