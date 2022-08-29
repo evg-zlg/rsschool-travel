@@ -534,38 +534,49 @@ body {
   justify-content: center;
   flex-wrap: nowrap;
 }
-.destinations__left {
+.destinations__item {
+  position: relative;
+  margin: 0 30px;
   height: 100%;
-  cursor: pointer;
 }
-@media (max-width: 820px) {
-  .destinations__left {
-    display: none;
-  }
-}
-
-.destinations__mid {
-  height: 100%;
-  cursor: pointer;
-  margin-left: 60px;
-  margin-right: 60px;
-}
-
-
-.destinations__right {
-  height: 100%;
-  cursor: pointer;
-}
-@media (max-width: 820px) {
-  .destinations__right {
-    display: none;
-  }
-}
-
 .destinations__image {
   display: block;
   border-radius: 16px;
   object-fit: contain;
+  height: 100%;
+}
+.destinations__label {
+  font-family: 'Red Hat Text';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 42px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+
+  position: absolute;
+  left: 15px;
+  bottom: 40px;
+}
+@media (max-width: 1024px) {
+  .destinations__label {
+    font-size: 24px;
+    line-height: 29px;
+  }
+}
+@media (max-width: 768px) {
+  .destinations__label {
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
+@media (max-width: 390px) {
+  .destinations__label {
+    font-size: 20px;
+    line-height: 26px;
+    top: 8px;
+    left: 15px;
+  }
 }
 .destinations__buttons {
   position: relative;

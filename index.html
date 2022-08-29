@@ -107,24 +107,39 @@
 
     </div>
   </section>
-  <!--  
+  
   <section class="content-block">
     <span id="popular-destinations"></span>
     <h2 class="content-block__title">
       POPULAR DESTINATIONS
     </h2>
     <div class="content-block__destinations">
-      <figure class="destinations">
-        <div class="destinations__left">
+      
+      <div class="destinations">
+
+        <picture class="destinations__item">
+          <source srcset="./images/spain-desktop.jpg" media="(min-width:768px)">
+          <source srcset="./images/spain-mobile.jpg" media="(max-width:415px)">
           <img class="destinations__image" src="./images/spain-desktop.jpg" alt="spain">
-        </div>
-        <div class="destinations__mid">
+          <label class="destinations__label"> SPAIN
+        </picture>
+          
+        <picture class="destinations__item">
+          <source srcset="./images/japan-desktop.jpg" media="(min-width:768px)">
+          <source srcset="./images/japan-mobile.jpg" media="(max-width:415px)">
           <img class="destinations__image" src="./images/japan-desktop.jpg" alt="japan">
-        </div>
-        <div class="destinations__right">
+          <label class="destinations__label"> japan
+        </picture>
+
+        <picture class="destinations__item">
+          <source srcset="./images/usa-desktop.jpg" media="(min-width:768px)">
+          <source srcset="./images/usa-mobile.jpg" media="(max-width:415px)">
           <img class="destinations__image" src="./images/usa-desktop.jpg" alt="usa">
-        </div>
-      </figure>
+          <label class="destinations__label"> USA
+        </picture>
+
+      </div>
+
       <div class="destinations__buttons">
         <label class="destinations__switch-label">
           <input class="destinations__switch-button" type="radio" name="destinations">
@@ -145,28 +160,7 @@
       </form>
     </div>
   </section>
--->
- 
-  <!--   <section class="content-block">
-    <h2 class="content-block__title">
-      test block
-    </h2>
-    <div class="content-block__test-block">
-      <figure class="test-block">
-        <div class="test-block__item">
-          
-        </div>
-        <div class="test-block__item">
-          
-        </div>
-        <div class="test-block__item">
-          
-        </div>
-      </figure>
-    </div>
-  </section>
 
--->
 
 
   <section class="content-block">
@@ -179,9 +173,11 @@
       </div>
       <div class="stories">
         <div class="stories__items">
-          <figure class="stories__image">
+          <picture class="stories__image">
+            <source srcset="./images/stories-thailand.jpg" media="(min-width:768px)">
+            <source srcset="./images/stories-thailand-small.jpg" media="(max-width:768px)">
             <img class="stories__img" src="./images/stories-thailand.jpg" alt="thailand">
-          </figure>
+          </picture>
           <div class="stories__description">
             <h3 class="stories__title">
               10 Photos of Attractive Thailand
@@ -201,9 +197,11 @@
         </div>
 
         <div class="stories__items">
-          <figure class="stories__image">
+          <picture class="stories__image">
+            <source srcset="./images/stories-utah.jpg" media="(min-width:768px)">
+            <source srcset="./images/stories-utah-small.jpg" media="(max-width:768px)">
             <img class="stories__img" src="./images/stories-utah.jpg" alt="utah">
-          </figure>
+          </picture>
           <div class="stories__description">
             <h3 class="stories__title">
               Canyonlands National Park, Utah
@@ -223,9 +221,11 @@
         </div>
 
         <div class="stories__items">
-          <figure class="stories__image">
+          <picture class="stories__image">
+            <source srcset="./images/stories-mountains.jpg" media="(min-width:768px)">
+            <source srcset="./images/stories-mountains-small.jpg" media="(max-width:768px)">
             <img class="stories__img" src="./images/stories-mountains.jpg" alt="mountains">
-          </figure>
+          </picture>
           <div class="stories__description">
             <h3 class="stories__title">
               I left my heart in the Mountains!
