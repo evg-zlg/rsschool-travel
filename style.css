@@ -196,6 +196,111 @@ body {
 .header__button:hover {
   background-color: #40a4b6;
 }
+
+.login-popup {
+  display: none;
+} 
+.login-popup_show {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, .9);
+}
+.login-popup__body {
+  width: 650px;
+  height: 660px;
+  background: linear-gradient(177.09deg, #FFFFFF 6.15%, #0D606F 202.69%);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 16px;
+  margin: 25px auto;
+  padding: 25px 45px 23px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.login-popup__form {}
+.login-popup__title {
+  font-family: 'Aleo';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 38px;
+  color: #0D606F;
+  margin: 0 0 30px 0;
+  
+}
+.login-popup__btn {
+  width: 560px;
+  height: 56px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 3px rgba(13, 96, 111, 0.08), 0px 2px 3px rgba(13, 96, 111, 0.16);
+  font-family: 'Red Hat Text';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px;
+  background: #0D606F;
+  color: #FFFFFF;
+  border: none;
+  margin-bottom: 20px;
+} 
+.login-popup__btn_facebook {
+  background: #1877F2;
+  background-image: url("./icons/facebook-logo.svg");
+  background-repeat: no-repeat;
+  background-position: 30% 50%;
+  padding-left: 50px;
+}
+.login-popup__btn_google {
+  background: #FFFFFF;
+  color: #0D606F;
+  background-image: url("./icons/google-logo.svg");
+  background-repeat: no-repeat;
+  background-position: 32% 50%;
+  padding-left: 39px;
+}
+.login-popup__separator {
+  display: block;
+  font-family: 'Aleo';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  position: relative;
+  color: rgba(13, 96, 111, 0.5);
+  margin: 0 0 22px 0;
+}
+.login-popup__separator::before {
+  content: "";
+  border: 1px solid rgba(13, 96, 111, 0.5);
+  height: 0.25px;
+  width: 261px;
+  position: absolute;
+  left: 0px;
+  top: 50%;
+}
+.login-popup__separator::after {
+  content: "";
+  border: 1px solid rgba(13, 96, 111, 0.5);
+  height: 0.25px;
+  width: 261px;
+  position: absolute;
+  right: 0px;
+  top: 50%;
+}
+.login-popup__input-label{}
+.login-popup__input {}
+.login-popup__btn_sign-in {}
+.login-popup__forgot-password {}
+.login-popup__separator-two {}
+.login-popup__account-qest {}
+.login-popup__register {}
+
+
 .first-section {
   background: url("./images/garrett-parker-DlkF4.jpg") 0 0 no-repeat;
   background-size: cover;

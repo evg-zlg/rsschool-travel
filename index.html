@@ -47,11 +47,41 @@
       </ul>
     </nav>
     <form class="authentication">
-      <button class="header__button">
+      <button class="header__button js-header-button">
         Login
       </button>
     </form>  
   </header>  
+
+  <div class="login-popup login-popup_show">
+    <div class="login-popup__body">
+      <form class="login-popup__form">
+        <h2 class="login-popup__title">
+          Log in to your account
+        </h2>
+        <button type="button" class="login-popup__btn login-popup__btn_facebook">
+          Sign In with Facebook
+        </button>
+        <button type="button" class="login-popup__btn login-popup__btn_google">
+          Sign In with Google
+        </button>
+        <span class="login-popup__separator">or</span>
+        <label class="login-popup__input-label"> E-mail
+          <input class="login-popup__input">
+        </label>
+        <label class="login-popup__input-label"> Password
+          <input class="login-popup__input">
+        </label>
+        <button type="button" class="login-popup__btn login-popup__btn_sign-in">
+          Sign In
+        </button>
+        <a class="login-popup__forgot-password" href="#">Forgot Your Password?</a>
+        <span class="login-popup__separator-two"></span>
+        <label class="login-popup__account-qest">Don’t have an account? Register</label>
+        <a class="login-popup__register" href="#">Register</a>
+      </form>
+    </div>
+  </div>
 
   <section class="first-section">
    <span id="plan-your-trip"></span>
