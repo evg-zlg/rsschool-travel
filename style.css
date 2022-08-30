@@ -425,6 +425,16 @@ body {
   margin-bottom: 97px;
   position: relative;
 }
+@media (max-width: 768px) {
+  .content-block {
+    margin-bottom: 50px;
+  }
+}
+@media (max-width: 415px) {
+  .content-block {
+    margin-bottom: 40px;
+  }
+}
 .content-block:last-child {
   margin-bottom: 0;
 }
@@ -521,6 +531,7 @@ body {
 }
 .content-block__destinations {
   width: 100%;
+  position: relative;
 }
 
 .destinations {
@@ -533,10 +544,17 @@ body {
   align-items: center;
   justify-content: center;
   flex-wrap: nowrap;
+  gap: 60px;
+  padding: 0 10px;
+}
+
+@media (max-width: 768px) {
+  .destinations {
+    gap: 6vw;
+  }
 }
 .destinations__item {
   position: relative;
-  margin: 0 30px;
   height: 100%;
 }
 .destinations__image {
@@ -544,6 +562,7 @@ body {
   border-radius: 16px;
   object-fit: contain;
   height: 100%;
+  margin: 0 0 0 -10px;
 }
 .destinations__label {
   font-family: 'Red Hat Text';
@@ -570,7 +589,7 @@ body {
     line-height: 22px;
   }
 }
-@media (max-width: 390px) {
+@media (max-width: 415px) {
   .destinations__label {
     font-size: 20px;
     line-height: 26px;
@@ -578,35 +597,101 @@ body {
     left: 15px;
   }
 }
+.destinations__left-arrow,
+.destinations__right-arrow {
+  display: none;
+}
+@media (max-width: 415px) {
+  .destinations__left-arrow {
+    display: block;
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    left: 8%;
+    top: 44%;
+
+    border: 5px solid rgba(242, 120, 92, 0.5);
+    border-bottom: none;
+    border-right: none;
+    
+    transform: rotate(-45deg);
+  }
+}
+@media (max-width: 415px) {
+  .destinations__right-arrow {
+    display: block;
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    right: 8%;
+    top: 44%;
+
+    border: 5px solid rgba(242, 120, 92, 0.5);
+    border-bottom: none;
+    border-right: none;
+    
+    transform: rotate(-225deg);
+  }
+}
+.destinations__right-arrow_isActive,
+.destinations__left-arrow_isActive {
+  border-color: #F2785C;
+}
+
 .destinations__buttons {
   position: relative;
   width: 80px;
   margin: 0 auto 40px;
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 768px) {
+  .destinations__buttons {
+    width: 55px;
+    margin: 0 auto 32px;
+  }
+}
+@media (max-width: 415px) {
+  .destinations__buttons {
+    width: 36px;
+    margin: -43px auto 22px;
+  }
 }
 .destinations__switch-button {
-  opacity: 0;
-  
+  opacity: 0; 
+
+}
+.destinations__switch-label {
+  display: block;
+  height: 5px;
+  width: 5px;
+  position: relative;
 }
 .destinations__switch-label::after {
   content: "";
   width: 20px;
   height: 20px;
-  background: #F2785C;
+  background: rgba(242, 120, 92, 0.5);
   border-radius: 50%;
   position: absolute;
   left: 33%;
-
+  top: 0;
 }
-.destinations__switch-label:nth-child(1)::after {
-  background: rgba(242, 120, 92, 0.5);
-  left: 0;
+@media (max-width: 768px) {
+  .destinations__switch-label::after {
+    width: 14px;
+    height: 14px;
+  }
 }
-.destinations__switch-label:nth-child(3)::after {
-  background: rgba(242, 120, 92, 0.5);
-  left: 65%;
-  
+@media (max-width: 415px) {
+  .destinations__switch-label::after {
+    width: 8px;
+    height: 8px;
+  }
 }
-
+.destinations__switch-label_isActive::after {
+  background: #F2785C;
+}
 .destinations__find-more {
   width: 228px;
   height: 59px;
@@ -622,6 +707,24 @@ body {
   border-style: none;
   padding-left: 81px;
 }
+@media (max-width: 768px) {
+  .destinations__find-more {
+    width: 145px;
+    height: 37.5px;
+    font-size: 11px;
+    line-height: 15px;
+    padding-left: 30px;
+  }
+}
+@media (max-width: 390px) {
+  .destinations__find-more {
+    width: 92px;
+    height: 30px;
+    font-size: 11px;
+    line-height: 15px;
+    padding-left: 30px;
+  }
+}
 .destination__find-more-arrow {
   display: inline-block;
   position: relative;
@@ -630,11 +733,30 @@ body {
   content: "";
   background-image: url("./icons/arrow.svg");
   position: absolute;
+  background-size: cover;
   left: 33.5px;
   top: 17px;
   z-index: 1;
   width: 35px;
   height: 22.5px;
+}
+@media (max-width:768px) {
+  .destination__find-more-arrow::after {
+
+    width: 18.75px;
+    height: 11.63px;
+    left: 23.5px;
+    top: 12px;
+  }
+}
+@media (max-width:390px) {
+  .destination__find-more-arrow::after {
+
+    width: 8.75px;
+    height: 5.63px;
+    left: 15.5px;
+    top: 12px;
+  }
 }
 #travel-stories {
   display: block;
