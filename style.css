@@ -211,7 +211,8 @@ body {
   background-color: rgba(255, 255, 255, .9);
 }
 .login-popup__body {
-  width: 650px;
+  max-width: 650px;
+  width: 100%;
   height: 660px;
   background: linear-gradient(177.09deg, #FFFFFF 6.15%, #0D606F 202.69%);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -221,15 +222,6 @@ body {
   box-sizing: border-box;
   text-align: center;
 }
-@media (max-width:768px) {
-  .login-popup__body {
-    width: 30vw;
-    height: 29.52vw;
-    width: 72vw;
-    height: 70.85vw;
-  }
-}
-
 .login-popup__form {}
 .login-popup__title {
   font-family: 'Aleo';
@@ -251,17 +243,37 @@ body {
   font-weight: 400;
   font-size: 20px;
   line-height: 26px;
-  background: #0D606F;
+  background-color: #0D606F;
   color: #FFFFFF;
   border: none;
   margin-bottom: 20px;
+  cursor: pointer;
+
+  transition: background-color 0.4s ease 0s;
 } 
+.login-popup__btn:hover {
+  background-color: #40a4b6;
+}
 .login-popup__btn_facebook {
   background: #1877F2;
   background-image: url("./icons/facebook-logo.svg");
   background-repeat: no-repeat;
   background-position: 30% 50%;
   padding-left: 50px;
+}
+@media (max-width: 658px) {
+  .login-popup__btn_facebook {
+    background-position: 10vw 50%;
+    padding-left: 30px; 
+  } 
+}
+@media (max-width: 414px) {
+  .login-popup__btn_facebook {
+    background-position: 5vw 50%;
+    padding-left: 30px;
+    font-size: 16px;
+    margin-bottom: 10px;
+  } 
 }
 .login-popup__btn_google {
   background: #FFFFFF;
@@ -270,6 +282,20 @@ body {
   background-repeat: no-repeat;
   background-position: 32% 50%;
   padding-left: 39px;
+}
+@media (max-width: 658px) {
+  .login-popup__btn_google {
+    background-position: 10vw 50%;
+    padding-left: 30px;
+  }
+}
+@media (max-width: 414px) {
+  .login-popup__btn_google {
+    background-position: 5vw 50%;
+    padding-left: 30px;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
 }
 .login-popup__separator-block {
   width: 100%;
@@ -329,15 +355,63 @@ body {
   border: none;
   margin: 0 0 20px 0;
 }
+@media (max-width: 414px) {
+  .login-popup__input {
+    margin-bottom: 10px;
+  }
+}
 .login-popup__btn_sign-in {
   margin-top: 25px;
-
+  margin-bottom: 10px;
 }
-.login-popup__forgot-password {}
-.login-popup__separator-two {}
-.login-popup__account-qest {}
-.login-popup__register {}
+.login-popup__forgot-password {
+  font-family: 'Aleo';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+  text-decoration-line: underline;
 
+  color: #0D606F;
+
+  text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.16);
+
+  transition: color 0.3s ease 0s;
+}
+.login-popup__forgot-password:hover {
+  color: #0d606f77;
+}
+hr {
+  background-color: rgba(13, 96, 111, 0.5);
+}
+.login-popup__account-qest {
+  font-family: 'Aleo';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+  
+  color: rgba(13, 96, 111, 0.5);
+
+  text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.16);
+}
+.login-popup__register {
+  font-family: 'Aleo';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+  text-decoration-line: underline;
+
+  color: #0D606F;
+
+  text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.16);
+
+  transition: color 0.3s ease 0s;
+}
+.login-popup__register:hover {
+  color: #0d606f77;
+}
 
 .first-section {
   background: url("./images/garrett-parker-DlkF4.jpg") 0 0 no-repeat;
