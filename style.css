@@ -292,9 +292,33 @@ body {
   right: 0px;
   top: 50%;
 }
-.login-popup__input-label{}
-.login-popup__input {}
-.login-popup__btn_sign-in {}
+.login-popup__input-label{
+  display: block;
+  font-family: 'Aleo';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #0D606F;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+.login-popup__input {
+  width: 560px;
+  height: 54px;
+
+  background: #FFFFFF;
+  box-shadow: inset 0px 0px 3px rgba(13, 96, 111, 0.08), inset 0px 2px 3px rgba(13, 96, 111, 0.16);
+  border-radius: 10px;
+  border: none;
+  margin: 0 0 20px 0;
+}
+.login-popup__btn_sign-in {
+  margin-top: 25px;
+  
+}
 .login-popup__forgot-password {}
 .login-popup__separator-two {}
 .login-popup__account-qest {}
