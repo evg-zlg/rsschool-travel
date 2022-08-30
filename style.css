@@ -221,6 +221,14 @@ body {
   box-sizing: border-box;
   text-align: center;
 }
+@media (max-width:768px) {
+  .login-popup__body {
+    width: 30vw;
+    height: 29.52vw;
+    width: 72vw;
+    height: 70.85vw;
+  }
+}
 
 .login-popup__form {}
 .login-popup__title {
@@ -234,7 +242,7 @@ body {
   
 }
 .login-popup__btn {
-  width: 560px;
+  width: 100%;
   height: 56px;
   border-radius: 10px;
   box-shadow: 0px 0px 3px rgba(13, 96, 111, 0.08), 0px 2px 3px rgba(13, 96, 111, 0.16);
@@ -263,6 +271,10 @@ body {
   background-position: 32% 50%;
   padding-left: 39px;
 }
+.login-popup__separator-block {
+  width: 100%;
+}
+
 .login-popup__separator {
   display: block;
   font-family: 'Aleo';
@@ -273,25 +285,27 @@ body {
   position: relative;
   color: rgba(13, 96, 111, 0.5);
   margin: 0 0 22px 0;
+  overflow: hidden;
 }
-.login-popup__separator::before {
-  content: "";
-  border: 1px solid rgba(13, 96, 111, 0.5);
-  height: 0.25px;
-  width: 261px;
-  position: absolute;
-  left: 0px;
-  top: 50%;
-}
+
+.login-popup__separator::before, 
 .login-popup__separator::after {
   content: "";
-  border: 1px solid rgba(13, 96, 111, 0.5);
-  height: 0.25px;
-  width: 261px;
-  position: absolute;
-  right: 0px;
-  top: 50%;
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+  width: 100%;
+  height: 2px;
+  background-color: rgba(13, 96, 111, 0.5);
 }
+.login-popup__separator::before {
+  margin-left: -100%;
+}
+.login-popup__separator::after {
+  margin-right: -100%;
+}
+
+
 .login-popup__input-label{
   display: block;
   font-family: 'Aleo';
@@ -306,7 +320,7 @@ body {
   gap: 10px;
 }
 .login-popup__input {
-  width: 560px;
+  width: 100%;
   height: 54px;
 
   background: #FFFFFF;
@@ -317,7 +331,7 @@ body {
 }
 .login-popup__btn_sign-in {
   margin-top: 25px;
-  
+
 }
 .login-popup__forgot-password {}
 .login-popup__separator-two {}
