@@ -43,7 +43,7 @@ body, figure, ul, li {
 }
 body {
   max-width: 1440px;
-  
+  display: hidden;
 }
 @media (max-width: 768px) {
   body {
@@ -140,7 +140,13 @@ body {
   top: 0;
   left: 0;
 }
+.menu-burger_open::before {
+  background-image: url("./icons/close-burger.svg");
+  background-repeat: no-repeat;
 
+  top: -25.5px;
+  left: 15.5px;
+}
 .menu-burger__button {
   opacity: 0;
 }
@@ -159,7 +165,28 @@ body {
   list-style-type: none;
   margin-right: 1rem;
 }
+.menu__item_dontShow {
+  display: none;
+}
+.menu-desktop_isBurger {
+  width: 50vw;
+  height: 80vw;
+  background-color: #F2785C;
+  box-shadow: 0px 4px 3px rgba(13, 96, 111, 0.25);
+  border-radius: 10px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
 
+  padding: 44px 15px 30px 0px;
+
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  
+}
 .menu__link {
   color: #FFFFFF;
   text-decoration: none;
@@ -199,9 +226,12 @@ body {
 
 .login-popup {
   display: none;
+  transition: display 1s ease 0s;
+  
 } 
 .login-popup_show {
   display: block;
+  
   position: absolute;
   top: 0;
   left: 0;
@@ -222,7 +252,7 @@ body {
   box-sizing: border-box;
   text-align: center;
 }
-.login-popup__form {}
+
 .login-popup__title {
   font-family: 'Aleo';
   font-style: normal;
@@ -256,11 +286,27 @@ body {
 }
 .login-popup__btn_facebook {
   background: #1877F2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15.5px;
+}
+.login-popup__btn-logo {
+  display: inline-block;
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+}
+.login-popup__btn-text {
+  display: inline-block;
+}
+.login-popup__btn-logo_facebook {
   background-image: url("./icons/facebook-logo.svg");
   background-repeat: no-repeat;
-  background-position: 30% 50%;
-  padding-left: 50px;
+  background-size: contain;
 }
+
+.login-popup__btn-text {}
 @media (max-width: 658px) {
   .login-popup__btn_facebook {
     background-position: 10vw 50%;
@@ -278,10 +324,17 @@ body {
 .login-popup__btn_google {
   background: #FFFFFF;
   color: #0D606F;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15.5px;
+}
+.login-popup__btn-logo_google {
+  width: 24px;
+  height: 24px;
   background-image: url("./icons/google-logo.svg");
   background-repeat: no-repeat;
-  background-position: 32% 50%;
-  padding-left: 39px;
+  background-size: contain;
 }
 @media (max-width: 658px) {
   .login-popup__btn_google {
@@ -410,6 +463,61 @@ hr {
   transition: color 0.3s ease 0s;
 }
 .login-popup__register:hover {
+  color: #0d606f77;
+}
+
+.sign-up {
+  display: none;
+  
+}
+.sign-up_show {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, .9);
+}
+.sign-up__body {
+  max-width: 650px;
+  width: 100%;
+  height: 436px;
+  background: linear-gradient(177.09deg, #FFFFFF 6.15%, #0D606F 202.69%);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 16px;
+  margin: 25px auto;
+  padding: 25px 45px 23px;
+  box-sizing: border-box;
+  text-align: center;
+}
+.sign-up__body .login-popup__btn_sign-in {
+  margin-top: 0;
+}
+.sign-up__text {
+  font-family: 'Aleo';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+  color: rgba(13, 96, 111, 0.5);
+
+  text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.16);
+}
+.sign-up__login-link {
+  font-family: 'Aleo';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+  color: #0D606F;
+
+  text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.16);
+
+  transition: color 0.3s ease 0s;
+}
+.sign-up__login-link:hover {
   color: #0d606f77;
 }
 
