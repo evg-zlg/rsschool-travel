@@ -897,6 +897,15 @@ hr {
   height: 100%;
   margin: 0 0 0 0px;
 }
+.destinations__item_position-left {
+  order: 0;
+}
+.destinations__item_position-mid {
+  order: 1;
+}
+.destinations__item_position-right {
+  order: 2;
+}
 .destinations__label {
   font-family: 'Red Hat Text';
   font-style: normal;

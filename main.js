@@ -93,3 +93,32 @@ document.querySelector(".menu-burger__button").addEventListener("click", (e) => 
 
   }
 });
+
+//обработка клика по картинке из популярных направлений (js-destinations__image)
+const destinations = document.querySelectorAll(".js-destinations__item");
+destinations.forEach(elem => {
+  elem.addEventListener("click", (e) => {
+    const leftImage  = document.querySelector(".destinations__item_position-left");
+    const midImage   = document.querySelector(".destinations__item_position-mid");
+    const rightImage = document.querySelector(".destinations__item_position-right");
+    console.log(e.target);
+    // если элемент слева
+    if (e.target == leftImage.children[2]) {
+      leftImage.classList.add("destinations__item_position-mid");
+      leftImage.classList.remove("destinations__item_position-left");
+      midImage.classList.add("destinations__item_position-right");
+      midImage.classList.remove("destinations__item_position-mid");
+      rightImage.classList.add("destinations__item_position-left");
+      rightImage.classList.remove("destinations__item_position-right");
+      
+      console.log("left")
+      // если элемент по центру
+    } else if (e.target == midImage) {
+      console.log("mid")
+      // если элемент справа
+    } else if (e.target == rightImage) {
+      console.log("right")
+    }  
+});
+
+});
