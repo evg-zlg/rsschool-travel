@@ -47,7 +47,7 @@ document.addEventListener("click", (e) => {
   if ( (e.target.classList.contains("menu__link")) && (document.querySelector(".menu-burger").classList.contains("menu-burger_open")) ) {
     closeBurger();
     //если клик по ссылке Account - открыть login popup
-    if (e.target.classList.contains("js-menu_open-login") ) {
+    if (e.target.classList.add("js-menu_open-login") ) {
       openLoginPopup();
     };
   };
@@ -95,30 +95,63 @@ document.querySelector(".menu-burger__button").addEventListener("click", (e) => 
 });
 
 //обработка клика по картинке из популярных направлений (js-destinations__image)
-const destinations = document.querySelectorAll(".js-destinations__item");
-destinations.forEach(elem => {
-  elem.addEventListener("click", (e) => {
-    const leftImage  = document.querySelector(".destinations__item_position-left");
-    const midImage   = document.querySelector(".destinations__item_position-mid");
-    const rightImage = document.querySelector(".destinations__item_position-right");
-    console.log(e.target);
-    // если элемент слева
-    if (e.target == leftImage.children[2]) {
-      leftImage.classList.add("destinations__item_position-mid");
-      leftImage.classList.remove("destinations__item_position-left");
-      midImage.classList.add("destinations__item_position-right");
-      midImage.classList.remove("destinations__item_position-mid");
-      rightImage.classList.add("destinations__item_position-left");
-      rightImage.classList.remove("destinations__item_position-right");
-      
-      console.log("left")
-      // если элемент по центру
-    } else if (e.target == midImage) {
-      console.log("mid")
-      // если элемент справа
-    } else if (e.target == rightImage) {
-      console.log("right")
-    }  
+
+//сдвинуть слева в центр все картинки
+function leftToCenterImage() {
+  //смещаем левую картинку в центр
+  document.querySelector(".js-destinations__item-left").classList.add("destinations__item-left-to-center");
+  //удаляем класс смещения правой картинки в центр (если есть)
+  document.querySelector(".js-destinations__item-right").classList.remove("destinations__item-right-to-center");
+  //затемняем левую стрелочку
+  document.querySelector(".destinations__left-arrow").classList.remove("destinations__arrow_isActive");
+  //перекрашиваем нижние круглые кнопки
+  document.querySelector(".destinations__buttons").children[0].classList.add("destinations__switch-label_isActive");
+  document.querySelector(".destinations__buttons").children[1].classList.remove("destinations__switch-label_isActive");
+};
+
+// сдвинуть справа в центр все картинки
+function rightToCenterImage() {
+  //смещаем правую картинку в центр
+  document.querySelector(".js-destinations__item-right").classList.add("destinations__item-right-to-center");
+  //удаляем класс смещения правой картинки в центр (если есть)
+  document.querySelector(".js-destinations__item-left").classList.remove("destinations__item-left-to-center");
+  //затемняем правую стрелочку
+  document.querySelector(".destinations__right-arrow").classList.remove("destinations__arrow_isActive");
+  //перекрашиваем нижние круглые кнопки
+  document.querySelector(".destinations__buttons").children[2].classList.add("destinations__switch-label_isActive");
+  document.querySelector(".destinations__buttons").children[1].classList.remove("destinations__switch-label_isActive");
+};
+
+// вернуть картинки в исходное состояние
+function toCenterImage() {
+  //удаляем класс смещения левой картинки в центр (если есть)
+  document.querySelector(".js-destinations__item-right").classList.remove("destinations__item-right-to-center");
+  //удаляем класс смещения правой картинки в центр (если есть)
+  document.querySelector(".js-destinations__item-left").classList.remove("destinations__item-left-to-center");
+  //затемняем правую стрелочку
+  if ( ! document.querySelector(".destinations__right-arrow").classList.contains("destinations__arrow_isActive")) {
+    document.querySelector(".destinations__right-arrow").classList.add("destinations__arrow_isActive");
+  }
+  if ( ! document.querySelector(".destinations__left-arrow").classList.contains("destinations__arrow_isActive")) {
+    document.querySelector(".destinations__left-arrow").classList.add("destinations__arrow_isActive");
+  }
+  //перекрашиваем нижние круглые кнопки
+  document.querySelector(".destinations__buttons").children[1].classList.add("destinations__switch-label_isActive");
+  document.querySelector(".destinations__buttons").children[0].classList.remove("destinations__switch-label_isActive");
+  document.querySelector(".destinations__buttons").children[2].classList.remove("destinations__switch-label_isActive");
+};
+
+//клик по левой картинке 
+document.querySelector(".js-destinations__item-left").addEventListener("click", (e) => {
+  leftToCenterImage(); //функция сдвига картинок вправо
 });
 
+//клик по правой картинке 
+document.querySelector(".js-destinations__item-right").addEventListener("click", (e) => {
+  rightToCenterImage(); //функция сдвига картинок влево
+});
+
+//клик по центральной картинке 
+document.querySelector(".js-destinations__item-mid").addEventListener("click", (e) => {
+  toCenterImage(); //возвращаем в исходное положение
 });
