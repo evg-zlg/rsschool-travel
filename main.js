@@ -1,10 +1,11 @@
 //функция открывает окно login popup
 function openLoginPopup() {
-  let loginPopUp = document.querySelector(".login-popup");
+  const loginPopUp = document.querySelector(".login-popup");
   if (!loginPopUp.classList.contains("login-popup_show")) {
     loginPopUp.classList.add("login-popup_show");
     document.body.style.overflow = "hidden";  
   }; 
+  
 };
 
 //при нажатии на кнопку login открываем login popup, body.overflow задаём hidden
@@ -27,24 +28,27 @@ document.querySelector(".js-sign-up__login-link").addEventListener("click", (e) 
   document.querySelector(".sign-up").classList.remove("sign-up_show");
   document.querySelector(".login-popup").classList.add("login-popup_show");
   e.stopPropagation();
-  
 });
 
 // слушаем клик на документе для разных целей
 document.addEventListener("click", (e) => {  
   let loginPopup = document.querySelector(".login-popup");
-  //если открыто login popup и кликнули вне окна login popup - прячем login popun и возвращаем body
-  // if ( (loginPopup.classList.contains("login-popup_show") ) && (! e.target.closest(".login-popup__body"))) {
-  //   console.log("click 2")
-  //   loginPopup.classList.remove("login-popup_show");
-  //   document.body.style.overflow = "visible";
-  // }
+  let signUp = document.querySelector(".sign-up");
+  // если открыто login popup и кликнули вне окна login popup - прячем login popun и возвращаем body
+  if ( (loginPopup.classList.contains("login-popup_show") ) && (! e.target.closest(".login-popup__body"))) {
+    loginPopup.classList.remove("login-popup_show");
+    document.body.style.overflow = "visible";
+  }
+  if ( (signUp.classList.contains("sign-up_show") ) && (! e.target.closest(".sign-up__body"))) {
+    signUp.classList.remove("sign-up_show");
+    document.body.style.overflow = "visible";
+  }
   //если клик по ссылке внутри бургер меню - закрываем бургер меню
   if ( (e.target.classList.contains("menu__link")) && (document.querySelector(".menu-burger").classList.contains("menu-burger_open")) ) {
     closeBurger();
-    console.log(e.target);
-    if (e.target.contains("Account")) {
-      console.log("Account");
+    //если клик по ссылке Account - открыть login popup
+    if (e.target.classList.contains("js-menu_open-login") ) {
+      openLoginPopup();
     };
   };
 });
@@ -78,7 +82,7 @@ function closeBurger() {
 
 //открываем меню бургер при клике на кнопке
 document.querySelector(".menu-burger__button").addEventListener("click", (e) => {
-  //если бургер открыть - закрываем, если бургер закрыт - открываем
+  //если бургер открыт - закрываем, если бургер закрыт - открываем
   if (document.querySelector(".menu-desktop").classList.contains("menu-desktop_isBurger")) {
     closeBurger()
   } else {
