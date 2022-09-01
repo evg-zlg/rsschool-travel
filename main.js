@@ -66,6 +66,7 @@ function openBurger() {
         item.classList.remove("menu__item_dontShow");
       };
     });
+    document.body.style.overflow = "hidden"
 }
 //функция закрывает бургер
 function closeBurger() {
@@ -78,14 +79,17 @@ function closeBurger() {
   // двум последним элементам меню бургер добавляем модификатор 
   items[items.length-1].classList.add("menu__item_dontShow");
   items[items.length-2].classList.add("menu__item_dontShow");
+  document.body.style.overflow = "visible"
 }
 
 //открываем меню бургер при клике на кнопке
 document.querySelector(".menu-burger__button").addEventListener("click", (e) => {
   //если бургер открыт - закрываем, если бургер закрыт - открываем
   if (document.querySelector(".menu-desktop").classList.contains("menu-desktop_isBurger")) {
-    closeBurger()
+    closeBurger();
+    
   } else {
     openBurger();
+
   }
 });
