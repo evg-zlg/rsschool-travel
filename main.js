@@ -107,6 +107,7 @@ function leftToCenterImage() {
   //перекрашиваем нижние круглые кнопки
   document.querySelector(".destinations__buttons").children[0].classList.add("destinations__switch-label_isActive");
   document.querySelector(".destinations__buttons").children[1].classList.remove("destinations__switch-label_isActive");
+  document.querySelector(".destinations__buttons").children[2].classList.remove("destinations__switch-label_isActive");
 };
 
 // сдвинуть справа в центр все картинки
@@ -120,6 +121,7 @@ function rightToCenterImage() {
   //перекрашиваем нижние круглые кнопки
   document.querySelector(".destinations__buttons").children[2].classList.add("destinations__switch-label_isActive");
   document.querySelector(".destinations__buttons").children[1].classList.remove("destinations__switch-label_isActive");
+  document.querySelector(".destinations__buttons").children[0].classList.remove("destinations__switch-label_isActive");
 };
 
 // вернуть картинки в исходное состояние
@@ -180,5 +182,22 @@ document.querySelector(".js-destinations__right-arrow").addEventListener("click"
     } else {
       toCenterImage(); 
     }
+  }
+});
+
+// обработка кнопкок (круглых) навигации по картинкам destinations
+// слушаем клик на группе кнопок
+document.querySelector(".destinations__buttons").addEventListener("click", (e) => {
+  //если клик по левой - сдвигаем всё вправо
+  if (e.target == document.querySelector(".destinations__buttons").children[0]) {
+    leftToCenterImage();
+  }
+  //если клик по центру - возвращаем в исходное состояние
+  if (e.target == document.querySelector(".destinations__buttons").children[1]) {
+    toCenterImage();
+  }
+  //если клик по правой - смещаем всё влево
+  if (e.target == document.querySelector(".destinations__buttons").children[2]) {
+    rightToCenterImage();
   }
 });
