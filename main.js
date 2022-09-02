@@ -47,7 +47,7 @@ document.addEventListener("click", (e) => {
   if ( (e.target.classList.contains("menu__link")) && (document.querySelector(".menu-burger").classList.contains("menu-burger_open")) ) {
     closeBurger();
     //если клик по ссылке Account - открыть login popup
-    if (e.target.classList.add("js-menu_open-login") ) {
+    if (e.target.closest(".js-menu_open-login") ) {
       openLoginPopup();
     };
   };

@@ -129,6 +129,7 @@ body {
 @media (max-width: 768px) {
   .menu-burger {
     display: block;
+    
   } 
 }
 .menu-burger::before {
