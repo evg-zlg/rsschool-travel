@@ -155,3 +155,30 @@ document.querySelector(".js-destinations__item-right").addEventListener("click",
 document.querySelector(".js-destinations__item-mid").addEventListener("click", (e) => {
   toCenterImage(); //возвращаем в исходное положение
 });
+
+//клик по стрелочке влево
+document.querySelector(".js-destinations__left-arrow").addEventListener("click", (e) => {
+  //проверяем, активна ли кнопка, по которой был клик
+  if (e.target.closest(".destinations__arrow_isActive")) {
+    //если правая стрелка активна, то сдвигаем картинки вправо
+    if (document.querySelector(".js-destinations__right-arrow").classList.contains("destinations__arrow_isActive")) {
+      leftToCenterImage(); //функция сдвига картинок вправо
+    //если правая стрелка не активна, то возвращаем в исходное состояние
+    } else {
+      toCenterImage(); 
+    }
+  }  
+});
+//клик по стрелочке вправо
+document.querySelector(".js-destinations__right-arrow").addEventListener("click", (e) => {
+  //проверяем, активна ли кнопка, по которой был клик
+  if (e.target.closest(".destinations__arrow_isActive")) {
+    //если левая кнопка активна, то сдвигаем картинки влево
+    if (document.querySelector(".js-destinations__left-arrow").classList.contains("destinations__arrow_isActive")) {
+      rightToCenterImage(); //функция сдвига картинок влево
+    //если левая стрелка не активна, то возвращаем в исходное состояние
+    } else {
+      toCenterImage(); 
+    }
+  }
+});
